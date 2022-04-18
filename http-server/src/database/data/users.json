@@ -1,0 +1,16 @@
+[
+  {
+    "id": "HkmWW4jV5",
+    "userName": "john.doe",
+    "firstName": "Johnny",
+    "lastName": "Doe",
+    "emailAddress": "john@doe.com"
+  },
+  {
+    "id": "B18vMVjN9",
+    "userName": "johnny.smith",
+    "firstName": "Johnny",
+    "lastName": "Smith",
+    "emailAddress": "johnny@smith.com"
+  }
+]
