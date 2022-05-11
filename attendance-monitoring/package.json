@@ -1,0 +1,19 @@
+{
+  "name": "attendance-monitoring",
+  "version": "1.0.0",
+  "description": "Attendance Monitoring",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/app",
+    "start:dev": "nodemon ./src/app"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-validator": "^6.14.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
