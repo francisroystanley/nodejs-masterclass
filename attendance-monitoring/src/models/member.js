@@ -1,8 +1,6 @@
 const { Schema, model } = require("mongoose");
 const { v4: uuid } = require("uuid");
 
-const Attendance = require("./attendance");
-
 const MemberSchema = new Schema(
   {
     _id: { type: String, default: uuid },

@@ -1,5 +1,5 @@
 const { createInternalError, createValidationError } = require("../middleware/error");
-const Member = require("../models/member");
+const { Attendance, Event, Member } = require("../models");
 
 const createMember = async (req, res, next) => {
   try {
@@ -26,6 +26,18 @@ const deleteMember = async (req, res, next) => {
   }
 };
 
+const getMemberAttendance = async memberId => {
+  const attendance = await Attendance.find({ memberId });
+  const eventIds = attendance.map(att => att.eventId);
+  const events = await Event.find({ _id: { $in: eventIds } }).exec();
+
+  return attendance.map(atd => {
+    const event = events.find(evt => evt._id === atd.eventId);
+
+    return { eventName: event.eventName, timeIn: atd.timeIn, timeOut: atd.timeOut };
+  });
+};
+
 const getMembers = async (req, res, next) => {
   try {
     const members = await Member.find();
@@ -39,11 +51,14 @@ const getMembers = async (req, res, next) => {
 const getMemberById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const member = await Member.findById(id);
+    const _member = await Member.findById(id);
 
-    if (!member) {
+    if (!_member) {
       return next(createValidationError("Member does not exist!", 404));
     }
+
+    const member = _member.toJSON();
+    member.eventAttendance = await getMemberAttendance(member._id);
 
     return res.json({ member });
   } catch (err) {

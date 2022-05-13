@@ -1,27 +1,9 @@
 const { createInternalError, createValidationError } = require("../middleware/error");
-const Attendance = require("../models/attendance");
-const Event = require("../models/event");
-const Member = require("../models/member");
+const { Attendance } = require("../models");
 
 const createAttendance = async (req, res, next) => {
   try {
-    const { eventId, memberId } = req.body;
     const attendance = await Attendance.create(req.body);
-    const member = await Member.findById(memberId);
-    const event = await Event.findById(eventId);
-    const error = [];
-
-    if (!member) error.push("Member does not exist");
-
-    if (!event) error.push("Event does not exist");
-
-    if (error.length) {
-      return next(createValidationError(error, 404));
-    }
-
-    member.eventAttendance = { attendanceId: attendance._id, eventId };
-    event.memberAttendance = { attendanceId: attendance._id, memberId };
-    await Promise.all[(member.save(), event.save())];
 
     return res.status(201).json({ attendance });
   } catch (err) {

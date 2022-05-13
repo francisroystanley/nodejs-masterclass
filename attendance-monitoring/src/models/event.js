@@ -7,13 +7,7 @@ const EventSchema = new Schema(
     eventName: { type: String, required: true },
     eventType: { type: String, required: true },
     eventStart: { type: Date, required: true },
-    eventEnd: { type: Date, required: true },
-    memberAttendance: [
-      {
-        attendanceId: { type: String, ref: "Attendance" },
-        memberId: { type: String, ref: "Member" }
-      }
-    ]
+    eventEnd: { type: Date, required: true }
   },
   {
     timestamps: true

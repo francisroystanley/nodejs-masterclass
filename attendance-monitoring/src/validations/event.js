@@ -1,5 +1,7 @@
-const { body, query } = require("express-validator");
+const { body, query, param } = require("express-validator");
 const { isAfter, isBefore } = require("validator");
+
+const { Event, Attendance } = require("../models");
 
 const createAndUpdateRules = [
   body("eventName").notEmpty().withMessage("Required"),
@@ -22,7 +24,46 @@ const createAndUpdateRules = [
     .withMessage("Should be after eventStart")
 ];
 
-const exportRules = [query("eventId").notEmpty().withMessage("Required")];
+const deleteRules = [
+  param("id")
+    .isUUID()
+    .withMessage("Should be a valid uuid")
+    .custom(val => {
+      return new Promise((resolve, reject) =>
+        Event.findById(val).then(event => {
+          if (event) resolve(true);
+
+          reject("Event does not exist");
+        })
+      );
+    })
+    .custom(val => {
+      return new Promise((resolve, reject) =>
+        Attendance.findOne({ eventId: val }).then(attendance => {
+          if (!attendance) resolve(true);
+
+          reject("Event Attendance exist");
+        })
+      );
+    })
+];
+
+const exportRules = [
+  query("eventId")
+    .notEmpty()
+    .withMessage("Required")
+    .isUUID()
+    .withMessage("Should be a valid uuid")
+    .custom(val => {
+      return new Promise((resolve, reject) =>
+        Event.findById(val).then(event => {
+          if (event) resolve(true);
+
+          reject("Event does not exist");
+        })
+      );
+    })
+];
 
 const searchRules = [
   query("eventName").optional(),
@@ -35,6 +76,7 @@ const searchRules = [
 
 module.exports = {
   createAndUpdateRules,
+  deleteRules,
   exportRules,
   searchRules
 };

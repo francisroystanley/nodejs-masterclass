@@ -1,7 +1,7 @@
-const { body } = require("express-validator");
+const { body, param } = require("express-validator");
 const { isAfter, isBefore } = require("validator");
 
-const { Member, Event } = require("../models");
+const { Member, Event, Attendance } = require("../models");
 
 const createAndUpdateRules = [
   body("timeIn")
@@ -47,6 +47,22 @@ const createAndUpdateRules = [
     })
 ];
 
+const deleteRules = [
+  param("id")
+    .isUUID()
+    .withMessage("Should be a valid uuid")
+    .custom(val => {
+      return new Promise((resolve, reject) =>
+        Attendance.findById(val).then(attendance => {
+          if (attendance) resolve(true);
+
+          reject("Attendance does not exist");
+        })
+      );
+    })
+];
+
 module.exports = {
-  createAndUpdateRules
+  createAndUpdateRules,
+  deleteRules
 };
