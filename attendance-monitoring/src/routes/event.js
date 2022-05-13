@@ -1,17 +1,17 @@
 const { Router } = require("express");
 
 const { eventCtrl } = require("../controllers");
-const { validate } = require("../middleware");
+const { validatorMiddleware } = require("../middleware");
 const { createAndUpdateRules, searchRules, exportRules } = require("../validations/event");
 
 const router = Router();
 
-router.route("/").get(eventCtrl.getEvents).post(validate(createAndUpdateRules), eventCtrl.createEvent);
+router.route("/").get(eventCtrl.getEvents).post(validatorMiddleware(createAndUpdateRules), eventCtrl.createEvent);
 
-router.route("/search").get(validate(searchRules), eventCtrl.searchEvent);
+router.route("/search").get(validatorMiddleware(searchRules), eventCtrl.searchEvent);
 
-router.route("/export").get(validate(exportRules), eventCtrl.exportEvent);
+router.route("/export").get(validatorMiddleware(exportRules), eventCtrl.exportEvent);
 
-router.route("/:id").get(eventCtrl.getEventById).put(validate(createAndUpdateRules), eventCtrl.updateEvent).delete(eventCtrl.deleteEvent);
+router.route("/:id").get(eventCtrl.getEventById).put(validatorMiddleware(createAndUpdateRules), eventCtrl.updateEvent).delete(eventCtrl.deleteEvent);
 
 module.exports = router;

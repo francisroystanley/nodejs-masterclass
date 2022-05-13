@@ -8,9 +8,8 @@ const DB_STRING = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}/${DB_N
 const connection = mongoose.connection;
 const connect = mongoose.connect(DB_STRING, { useNewUrlParser: true });
 
-mongoose.set("toJSON", {
-  versionKey: false
-});
+mongoose.set("toJSON", { versionKey: false });
+mongoose.set("returnOriginal", false);
 
 connection.on("open", () => console.log("Connected to mongodb"));
 

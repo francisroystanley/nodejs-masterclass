@@ -1,39 +1,39 @@
 {
   "client": "Thunder Client",
   "collectionName": "Attendance Monitoring",
-  "dateExported": "2022-05-11T10:38:00.640Z",
+  "dateExported": "2022-05-13T02:53:54.254Z",
   "version": "1.1",
   "folders": [],
   "requests": [
     {
-      "_id": "a6ef6a4c-0200-4553-863a-81cf18d528b6",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "2e0fe0e5-a423-451a-9bcc-6c2375ff7afc",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
       "name": "Event GET and POST",
       "url": "http://localhost:9000/api/events",
       "method": "GET",
       "sortNum": 10000,
-      "created": "2022-05-11T04:22:04.187Z",
-      "modified": "2022-05-11T08:26:24.130Z",
+      "created": "2022-05-11T14:25:28.464Z",
+      "modified": "2022-05-11T17:40:39.965Z",
       "headers": [],
       "params": [],
       "body": {
         "type": "json",
-        "raw": "{\n    \"eventName\": \"Event 1\",\n    \"eventType\": \"Event Type\",\n    \"eventStart\": \"2031-01-01\",\n    \"eventEnd\": \"2040-01-01\"\n}",
+        "raw": "{\n    \"eventName\": \"Event 2\",\n    \"eventType\": \"Event Type 2\",\n    \"eventStart\": \"2023-01-05T00:00:00.000Z\",\n    \"eventEnd\": \"2023-01-05T00:00:00.001Z\"\n}",
         "form": []
       },
       "tests": []
     },
     {
-      "_id": "6c9fe544-9d8a-493a-979b-719dd6fe1cd7",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "77a6b8fd-7c3e-4248-92ee-26397c64d9b7",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
       "name": "Event Search GET",
       "url": "http://localhost:9000/api/events/search?eventName=3",
       "method": "GET",
       "sortNum": 12500,
-      "created": "2022-05-11T08:41:57.959Z",
-      "modified": "2022-05-11T09:09:50.694Z",
+      "created": "2022-05-11T14:25:28.465Z",
+      "modified": "2022-05-11T14:25:28.465Z",
       "headers": [],
       "params": [
         {
@@ -45,15 +45,15 @@
       "tests": []
     },
     {
-      "_id": "9f1585a5-801f-4b01-bf2d-29226c48489e",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "c480d530-cc11-467f-a9d5-a755c57bc765",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
       "name": "Event Id Export GET",
       "url": "http://localhost:9000/api/events/export?eventId=627b6ed73257e111aa8d3eba",
       "method": "GET",
       "sortNum": 15000,
-      "created": "2022-05-11T08:24:46.009Z",
-      "modified": "2022-05-11T08:39:44.972Z",
+      "created": "2022-05-11T14:25:28.466Z",
+      "modified": "2022-05-11T14:25:28.466Z",
       "headers": [],
       "params": [
         {
@@ -65,105 +65,114 @@
       "tests": []
     },
     {
-      "_id": "8281bbf2-410d-460e-90c7-7848327c2995",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "b3bb2c82-e879-4f95-908f-042700edd596",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
       "name": "Event Id GET, PUT, and DELETE",
-      "url": "http://localhost:9000/api/events/627b732939a38d90c7a7b38e",
+      "url": "http://localhost:9000/api/events/94c7a1cc-5341-497b-a2ff-cc834acc2653",
       "method": "PUT",
       "sortNum": 20000,
-      "created": "2022-05-11T04:22:14.611Z",
-      "modified": "2022-05-11T08:28:10.225Z",
+      "created": "2022-05-11T14:25:28.467Z",
+      "modified": "2022-05-11T17:40:34.477Z",
       "headers": [],
       "params": [],
       "body": {
         "type": "json",
-        "raw": "{\n    \"eventName\": \"Event 3\",\n    \"eventType\": \"Event Type 3\",\n    \"eventStart\": \"2025-12-31\",\n    \"eventEnd\": \"2026-01-01\"\n}",
+        "raw": "{\n    \"eventName\": \"Event 3\",\n    \"eventType\": \"Event Type 3\",\n    \"eventStart\": \"2023-01-05T00:00:00.000Z\",\n    \"eventEnd\": \"2023-01-05T00:00:00.001Z\"\n}",
         "form": []
       },
       "tests": []
     },
     {
-      "_id": "2ab51888-06f8-49d4-b1ed-d19d740ee83f",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "e4af3baf-b436-4651-b31e-4250898e9eb0",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
       "name": "Member GET and POST",
       "url": "http://localhost:9000/api/members",
       "method": "GET",
       "sortNum": 22500,
-      "created": "2022-05-11T04:22:32.298Z",
-      "modified": "2022-05-11T09:41:00.538Z",
+      "created": "2022-05-11T14:25:28.468Z",
+      "modified": "2022-05-11T17:45:04.229Z",
       "headers": [],
       "params": [],
       "body": {
         "type": "json",
-        "raw": "{\n    \"name\": \"Member One\",\n    \"status\": \"Active\"\n}",
+        "raw": "{\n    \"name\": \"Test Member\",\n    \"status\": \"Active\"\n}",
         "form": []
       },
       "tests": []
     },
     {
-      "_id": "5e1cc4d8-b0c6-4e56-a9fe-47fe25777dd4",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "649ad400-3c21-4c93-8c42-c8c8877d0836",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
       "name": "Member Search GET",
-      "url": "http://localhost:9000/api/events/search?eventName=3",
+      "url": "http://localhost:9000/api/members/search?status=Active",
       "method": "GET",
       "sortNum": 23125,
-      "created": "2022-05-11T09:32:10.164Z",
-      "modified": "2022-05-11T09:32:28.254Z",
+      "created": "2022-05-11T14:25:28.469Z",
+      "modified": "2022-05-11T17:43:29.520Z",
       "headers": [],
       "params": [
         {
-          "name": "eventName",
-          "value": "3",
+          "name": "status",
+          "value": "Active",
           "isPath": false
         }
       ],
       "tests": []
     },
     {
-      "_id": "4131ab47-ce85-4667-bd29-f031f2286e0a",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "1b11adee-b317-443a-b6a8-30aa4e459f70",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
       "name": "Member Id GET, PUT, and DELETE",
-      "url": "http://localhost:9000/api/members/627b833cf906ea5273b77f0a",
-      "method": "PUT",
+      "url": "http://localhost:9000/api/members/a85ff564-eabf-4691-a555-61c93b4838bd",
+      "method": "GET",
       "sortNum": 23750,
-      "created": "2022-05-11T04:22:36.771Z",
-      "modified": "2022-05-11T09:53:16.746Z",
+      "created": "2022-05-11T14:25:28.470Z",
+      "modified": "2022-05-12T10:13:40.588Z",
       "headers": [],
       "params": [],
       "body": {
         "type": "json",
-        "raw": "{\n  \"name\": \"Member One\",\n  \"status\": \"Inactive\",\n  \"joinedDate\": \"2022-05-11T08:26:17.142Z\"\n}",
+        "raw": "{\n  \"name\": \"Test Member\",\n  \"status\": \"Inactive\",\n  \"joinedDate\": \"2022-05-11\"\n}",
         "form": []
       },
       "tests": []
     },
     {
-      "_id": "75f22f25-fca0-4009-89ad-b0612219afae",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "cf8fb612-27cc-4aec-b224-84af6ebf6772",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
-      "name": "Attendance GET and POST",
-      "url": "",
-      "method": "GET",
+      "name": "Attendance POST",
+      "url": "http://localhost:9000/api/attendance",
+      "method": "POST",
       "sortNum": 25000,
-      "created": "2022-05-11T04:22:38.275Z",
-      "modified": "2022-05-11T04:25:30.683Z",
-      "headers": []
+      "created": "2022-05-11T14:25:28.471Z",
+      "modified": "2022-05-12T10:04:53.133Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"timeIn\": \"2022-05-12\",\n  \"memberId\": \"a85ff564-eabf-4691-a555-61c93b4838bd\",\n  \"eventId\": \"8addf4f5-946c-46a6-a58a-e7bcd144855c\"\n}",
+        "form": []
+      },
+      "tests": []
     },
     {
-      "_id": "a796c2c5-2dcb-4b2b-8a60-0c111803d90d",
-      "colId": "159b9ceb-3671-436c-8d95-049df86c0a92",
+      "_id": "9577ce40-afe0-46a4-b66f-266bcac5cb2b",
+      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
       "containerId": "",
-      "name": "Attendance Id GET, PUT, and DELETE",
-      "url": "",
-      "method": "GET",
+      "name": "Attendance Id PUT and DELETE",
+      "url": "http://localhost:9000/api/attendance/f28aabcf-c0d6-48c2-a51f-2c7f203dde56",
+      "method": "DELETE",
       "sortNum": 30000,
-      "created": "2022-05-11T04:22:35.434Z",
-      "modified": "2022-05-11T04:22:35.434Z",
-      "headers": []
+      "created": "2022-05-11T14:25:28.472Z",
+      "modified": "2022-05-12T09:05:09.920Z",
+      "headers": [],
+      "params": [],
+      "tests": []
     }
   ]
 }

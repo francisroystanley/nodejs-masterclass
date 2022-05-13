@@ -1,4 +1,9 @@
+const errorMiddleware = require("./error");
 const loggerMiddleware = require("./logger");
-const validate = require("./validator");
+const validatorMiddleware = require("./validator");
 
-module.exports = { loggerMiddleware, validate };
+module.exports = {
+  errorMiddleware,
+  loggerMiddleware,
+  validatorMiddleware
+};

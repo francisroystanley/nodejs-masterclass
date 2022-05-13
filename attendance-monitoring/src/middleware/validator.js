@@ -1,4 +1,5 @@
 const { validationResult } = require("express-validator");
+const { createValidationError } = require("./error");
 
 const customValidationResult = validationResult.withDefaults({
   formatter: error => ({
@@ -13,7 +14,7 @@ const validate = validations => async (req, res, next) => {
 
   if (errors.isEmpty()) return next();
 
-  return res.status(422).json({ message: "Validation Error", errors: errors.array({ onlyFirstError: true }) });
+  return next(createValidationError(errors.array({ onlyFirstError: true }), 422));
 };
 
 module.exports = validate;

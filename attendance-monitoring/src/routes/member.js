@@ -1,15 +1,15 @@
 const { Router } = require("express");
 
 const { memberCtrl } = require("../controllers");
-const { validate } = require("../middleware");
+const { validatorMiddleware } = require("../middleware");
 const { createAndUpdateRules, searchRules } = require("../validations/member");
 
 const router = Router();
 
-router.route("/").get(memberCtrl.getMembers).post(validate(createAndUpdateRules), memberCtrl.createMember);
+router.route("/").get(memberCtrl.getMembers).post(validatorMiddleware(createAndUpdateRules), memberCtrl.createMember);
 
-router.route("/search").get(validate(searchRules), memberCtrl.searchMember);
+router.route("/search").get(validatorMiddleware(searchRules), memberCtrl.searchMember);
 
-router.route("/:id").get(memberCtrl.getMemberById).put(validate(createAndUpdateRules), memberCtrl.updateMember).delete(memberCtrl.deleteMember);
+router.route("/:id").get(memberCtrl.getMemberById).put(validatorMiddleware(createAndUpdateRules), memberCtrl.updateMember).delete(memberCtrl.deleteMember);
 
 module.exports = router;

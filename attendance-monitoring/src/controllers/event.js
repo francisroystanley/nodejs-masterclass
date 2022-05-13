@@ -1,12 +1,13 @@
+const { createInternalError, createValidationError } = require("../middleware/error");
 const Event = require("../models/event");
 
 const createEvent = async (req, res, next) => {
   try {
     const event = await Event.create(req.body);
 
-    return res.status(201).json({ success: true, event });
+    return res.status(201).json({ event });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -16,12 +17,12 @@ const deleteEvent = async (req, res, next) => {
     const event = await Event.findByIdAndDelete(id);
 
     if (!event) {
-      return res.status(404).json({ success: false, message: "Event does not exist!" });
+      return next(createValidationErrorError("Event does not exist!", 404));
     }
 
-    return res.json({ success: true });
+    return res.sendStatus(204);
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -31,12 +32,12 @@ const exportEvent = async (req, res, next) => {
     const event = await Event.findById(eventId);
 
     if (!event) {
-      return res.status(404).json({ success: false, message: "Event does not exist!" });
+      return next(createValidationError("Event does not exist!", 404));
     }
 
-    return res.json({ success: true });
+    return res.sendStatus(204);
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -44,9 +45,9 @@ const getEvents = async (req, res, next) => {
   try {
     const events = await Event.find();
 
-    return res.json({ success: true, events });
+    return res.json({ events });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -56,12 +57,12 @@ const getEventById = async (req, res, next) => {
     const event = await Event.findById(id);
 
     if (!event) {
-      return res.status(404).json({ success: false, message: "Event does not exist!" });
+      return next(createValidationError("Event does not exist!", 404));
     }
 
-    return res.json({ success: true, event });
+    return res.json({ event });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -76,24 +77,24 @@ const searchEvent = async (req, res, next) => {
 
     const events = await query.exec();
 
-    return res.json({ success: true, events });
+    return res.json({ events });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
 const updateEvent = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const event = await Event.findByIdAndUpdate(id, req.body, { returnDocument: "after" });
+    const event = await Event.findByIdAndUpdate(id, req.body);
 
     if (!event) {
-      return res.status(404).json({ success: false, message: "Event does not exist!" });
+      return next(createValidationError("Event does not exist!", 404));
     }
 
-    return res.json({ success: true, event });
+    return res.json({ event });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 

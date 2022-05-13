@@ -1,12 +1,13 @@
+const { createInternalError, createValidationError } = require("../middleware/error");
 const Member = require("../models/member");
 
 const createMember = async (req, res, next) => {
   try {
     const member = await Member.create(req.body);
 
-    return res.status(201).json({ success: true, member });
+    return res.status(201).json({ member });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -16,12 +17,12 @@ const deleteMember = async (req, res, next) => {
     const member = await Member.findByIdAndDelete(id);
 
     if (!member) {
-      return res.status(404).json({ success: false, message: "Member does not exist!" });
+      return next(createValidationError("Member does not exist!", 404));
     }
 
-    return res.json({ success: true });
+    return res.sendStatus(204);
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -29,9 +30,9 @@ const getMembers = async (req, res, next) => {
   try {
     const members = await Member.find();
 
-    return res.json({ success: true, members });
+    return res.json({ members });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -41,12 +42,12 @@ const getMemberById = async (req, res, next) => {
     const member = await Member.findById(id);
 
     if (!member) {
-      return res.status(404).json({ success: false, message: "Member does not exist!" });
+      return next(createValidationError("Member does not exist!", 404));
     }
 
-    return res.json({ success: true, member });
+    return res.json({ member });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
@@ -59,24 +60,24 @@ const searchMember = async (req, res, next) => {
 
     const members = await query.exec();
 
-    return res.json({ success: true, members });
+    return res.json({ members });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
 const updateMember = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const member = await Member.findByIdAndUpdate(id, req.body, { returnDocument: "after" });
+    const member = await Member.findByIdAndUpdate(id, req.body);
 
     if (!member) {
-      return res.status(404).json({ success: false, message: "Member does not exist!" });
+      return next(createValidationError("Member does not exist!", 404));
     }
 
-    return res.json({ success: true, member });
+    return res.json({ member });
   } catch (err) {
-    return next(err);
+    next(createInternalError(err.message));
   }
 };
 
