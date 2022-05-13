@@ -1,20 +1,20 @@
 {
   "client": "Thunder Client",
   "collectionName": "Attendance Monitoring",
-  "dateExported": "2022-05-13T02:53:54.254Z",
+  "dateExported": "2022-05-13T09:39:17.880Z",
   "version": "1.1",
   "folders": [],
   "requests": [
     {
-      "_id": "2e0fe0e5-a423-451a-9bcc-6c2375ff7afc",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "11b7c136-db08-4049-a1b9-c9de9f69a324",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Event GET and POST",
       "url": "http://localhost:9000/api/events",
       "method": "GET",
       "sortNum": 10000,
-      "created": "2022-05-11T14:25:28.464Z",
-      "modified": "2022-05-11T17:40:39.965Z",
+      "created": "2022-05-13T03:09:40.010Z",
+      "modified": "2022-05-13T03:09:40.010Z",
       "headers": [],
       "params": [],
       "body": {
@@ -25,15 +25,15 @@
       "tests": []
     },
     {
-      "_id": "77a6b8fd-7c3e-4248-92ee-26397c64d9b7",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "8b2086d8-2f56-4bc9-ac7f-4cd8093f4a0e",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Event Search GET",
       "url": "http://localhost:9000/api/events/search?eventName=3",
       "method": "GET",
       "sortNum": 12500,
-      "created": "2022-05-11T14:25:28.465Z",
-      "modified": "2022-05-11T14:25:28.465Z",
+      "created": "2022-05-13T03:09:40.038Z",
+      "modified": "2022-05-13T03:09:40.038Z",
       "headers": [],
       "params": [
         {
@@ -45,35 +45,35 @@
       "tests": []
     },
     {
-      "_id": "c480d530-cc11-467f-a9d5-a755c57bc765",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "994bb4ea-a0f9-4446-8de6-5c8d281ad8ed",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Event Id Export GET",
-      "url": "http://localhost:9000/api/events/export?eventId=627b6ed73257e111aa8d3eba",
+      "url": "http://localhost:9000/api/events/export?eventId=36a07bd2-6d12-47ed-9154-1f1f89e71fa5",
       "method": "GET",
       "sortNum": 15000,
-      "created": "2022-05-11T14:25:28.466Z",
-      "modified": "2022-05-11T14:25:28.466Z",
+      "created": "2022-05-13T03:09:40.039Z",
+      "modified": "2022-05-13T06:16:55.489Z",
       "headers": [],
       "params": [
         {
           "name": "eventId",
-          "value": "627b6ed73257e111aa8d3eba",
+          "value": "36a07bd2-6d12-47ed-9154-1f1f89e71fa5",
           "isPath": false
         }
       ],
       "tests": []
     },
     {
-      "_id": "b3bb2c82-e879-4f95-908f-042700edd596",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "e5f29632-006d-4ec8-bcc8-3ee189181148",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Event Id GET, PUT, and DELETE",
-      "url": "http://localhost:9000/api/events/94c7a1cc-5341-497b-a2ff-cc834acc2653",
-      "method": "PUT",
+      "url": "http://localhost:9000/api/events/36a07bd2-6d12-47ed-9154-1f1f89e71fa5",
+      "method": "GET",
       "sortNum": 20000,
-      "created": "2022-05-11T14:25:28.467Z",
-      "modified": "2022-05-11T17:40:34.477Z",
+      "created": "2022-05-13T03:09:40.040Z",
+      "modified": "2022-05-13T06:16:46.276Z",
       "headers": [],
       "params": [],
       "body": {
@@ -84,15 +84,15 @@
       "tests": []
     },
     {
-      "_id": "e4af3baf-b436-4651-b31e-4250898e9eb0",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "2aa08b00-9b59-44a8-adc1-081e45254ce4",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Member GET and POST",
       "url": "http://localhost:9000/api/members",
       "method": "GET",
       "sortNum": 22500,
-      "created": "2022-05-11T14:25:28.468Z",
-      "modified": "2022-05-11T17:45:04.229Z",
+      "created": "2022-05-13T03:09:40.041Z",
+      "modified": "2022-05-13T03:09:40.041Z",
       "headers": [],
       "params": [],
       "body": {
@@ -103,15 +103,15 @@
       "tests": []
     },
     {
-      "_id": "649ad400-3c21-4c93-8c42-c8c8877d0836",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "aaa50cdd-c22e-4f56-93e0-4c39ad94f0cc",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Member Search GET",
       "url": "http://localhost:9000/api/members/search?status=Active",
       "method": "GET",
       "sortNum": 23125,
-      "created": "2022-05-11T14:25:28.469Z",
-      "modified": "2022-05-11T17:43:29.520Z",
+      "created": "2022-05-13T03:09:40.042Z",
+      "modified": "2022-05-13T03:09:40.042Z",
       "headers": [],
       "params": [
         {
@@ -123,15 +123,15 @@
       "tests": []
     },
     {
-      "_id": "1b11adee-b317-443a-b6a8-30aa4e459f70",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "511167d3-c9f3-4eb7-92c6-91578e968b29",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Member Id GET, PUT, and DELETE",
       "url": "http://localhost:9000/api/members/a85ff564-eabf-4691-a555-61c93b4838bd",
       "method": "GET",
       "sortNum": 23750,
-      "created": "2022-05-11T14:25:28.470Z",
-      "modified": "2022-05-12T10:13:40.588Z",
+      "created": "2022-05-13T03:09:40.043Z",
+      "modified": "2022-05-13T08:03:17.644Z",
       "headers": [],
       "params": [],
       "body": {
@@ -142,36 +142,41 @@
       "tests": []
     },
     {
-      "_id": "cf8fb612-27cc-4aec-b224-84af6ebf6772",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "6b2d4589-0128-4899-ba09-fcdc9d307bda",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Attendance POST",
       "url": "http://localhost:9000/api/attendance",
       "method": "POST",
       "sortNum": 25000,
-      "created": "2022-05-11T14:25:28.471Z",
-      "modified": "2022-05-12T10:04:53.133Z",
+      "created": "2022-05-13T03:09:40.044Z",
+      "modified": "2022-05-13T04:25:17.534Z",
       "headers": [],
       "params": [],
       "body": {
         "type": "json",
-        "raw": "{\n  \"timeIn\": \"2022-05-12\",\n  \"memberId\": \"a85ff564-eabf-4691-a555-61c93b4838bd\",\n  \"eventId\": \"8addf4f5-946c-46a6-a58a-e7bcd144855c\"\n}",
+        "raw": "{\n  \"timeIn\": \"2022-05-12\",\n  \"memberId\": \"e6c2c457-4206-4f97-9aec-77189385c757\",\n  \"eventId\": \"36a07bd2-6d12-47ed-9154-1f1f89e71fa5\"\n}",
         "form": []
       },
       "tests": []
     },
     {
-      "_id": "9577ce40-afe0-46a4-b66f-266bcac5cb2b",
-      "colId": "b0e041a9-c30e-42e7-8c4b-1ea309f26b91",
+      "_id": "d3f4287c-d189-4872-9f60-652e6784e355",
+      "colId": "d81162c5-ed4b-46d2-846d-44a89a625108",
       "containerId": "",
       "name": "Attendance Id PUT and DELETE",
-      "url": "http://localhost:9000/api/attendance/f28aabcf-c0d6-48c2-a51f-2c7f203dde56",
-      "method": "DELETE",
+      "url": "http://localhost:9000/api/attendance/9807e119-eb32-4fa7-a4b7-f560d4e4c1e3",
+      "method": "PUT",
       "sortNum": 30000,
-      "created": "2022-05-11T14:25:28.472Z",
-      "modified": "2022-05-12T09:05:09.920Z",
+      "created": "2022-05-13T03:09:40.045Z",
+      "modified": "2022-05-13T04:31:53.627Z",
       "headers": [],
       "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"timeIn\": \"2022-05-12\",\n  \"memberId\": \"e6c2c457-4206-4f97-9aec-77189385c757\",\n  \"eventId\": \"36a07bd2-6d12-47ed-9154-1f1f89e71fa5\",\n  \"timeOut\": \"2022-05-22\"\n}",
+        "form": []
+      },
       "tests": []
     }
   ]
